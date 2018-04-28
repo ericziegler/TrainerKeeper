@@ -29,7 +29,7 @@ class RoutineListViewController: UIViewController {
   
   private func setupNavBar() {
     navigationController?.navigationBar.titleTextAttributes = navTitleTextAttributes()
-    navigationItem.title = "Train Trax"
+    navigationItem.title = "TrainTrax"
     if let addImage = UIImage(named: "Add")?.maskedImageWithColor(UIColor.accent) {
       let addButton = UIButton(type: .custom)
       addButton.addTarget(self, action: #selector(addTapped(_:)), for: .touchUpInside)

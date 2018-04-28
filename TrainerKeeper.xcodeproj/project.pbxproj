@@ -29,6 +29,7 @@
 		07EEB48B20939D8A00106F3A /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB48A20939D8A00106F3A /* RoutineViewController.swift */; };
 		07EEB48E2093A25E00106F3A /* CProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB48D2093A25E00106F3A /* CProgressView.swift */; };
 		07EEB4942093E7B800106F3A /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB4932093E7B800106F3A /* SetCell.swift */; };
+		07EEB4962094928100106F3A /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB4952094928100106F3A /* TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		07EEB48A20939D8A00106F3A /* RoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		07EEB48D2093A25E00106F3A /* CProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CProgressView.swift; sourceTree = "<group>"; };
 		07EEB4932093E7B800106F3A /* SetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCell.swift; sourceTree = "<group>"; };
+		07EEB4952094928100106F3A /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				079201DE208FB3F100E70AEE /* RoutineList.swift */,
 				07EEB46A209136E700106F3A /* Routine.swift */,
 				07EEB46C2091373000106F3A /* RoutineSet.swift */,
+				07EEB4952094928100106F3A /* TestData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				07EEB475209149E200106F3A /* UIFont+Extensions.swift in Sources */,
 				07EEB47F2092A00400106F3A /* EditRoutineViewController.swift in Sources */,
 				07EEB477209149E200106F3A /* NSRange+Extensions.swift in Sources */,
+				07EEB4962094928100106F3A /* TestData.swift in Sources */,
 				07EEB476209149E200106F3A /* UIColor+Extensions.swift in Sources */,
 				07EEB474209149E200106F3A /* StyleUI.swift in Sources */,
 				07EEB48E2093A25E00106F3A /* CProgressView.swift in Sources */,
@@ -413,7 +417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zigabytes.TrainerKeeper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zigabytes.traintrax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,7 +436,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zigabytes.TrainerKeeper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zigabytes.traintrax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

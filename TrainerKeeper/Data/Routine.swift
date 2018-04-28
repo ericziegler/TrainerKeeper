@@ -22,6 +22,18 @@ class Routine: NSObject, NSCoding {
   var routineSets = [RoutineSet]()
   var completionCount = 0
   
+  var routineSetsCompleted: [RoutineSet] {
+    get {
+      var completed = [RoutineSet]()
+      for curSet in routineSets {
+        if curSet.completed {
+          completed.append(curSet)
+        }
+      }
+      return completed
+    }
+  }
+  
   // MARK: - Init
   
   override init() {

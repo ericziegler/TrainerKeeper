@@ -22,7 +22,7 @@ class RoutineViewController: UIViewController {
   @IBOutlet var listView: UICollectionView!
   
   var routine: Routine!
-  var completedList = [Int]()
+  var layout: UICollectionViewFlowLayout!
   
   // MARK: - Init
   
@@ -35,6 +35,7 @@ class RoutineViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    layout = listView.collectionViewLayout as! UICollectionViewFlowLayout
     nameLabel.text = routine.name
     setupNavBar()
   }
@@ -65,14 +66,30 @@ class RoutineViewController: UIViewController {
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    
     // Update flow layout
-    let layout = self.listView.collectionViewLayout as! UICollectionViewFlowLayout
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-    let squareSize = CGFloat((self.listView.bounds.size.width / 2.0) - 2)
+    var size = listView.bounds.size.width
+    layout.minimumInteritemSpacing = 0
+    layout.minimumLineSpacing = 4
+    if UIDevice.current.orientation.isLandscape {
+      size = listView.bounds.height
+      layout.minimumInteritemSpacing = 4
+      layout.minimumLineSpacing = 0
+    }
+    var squareDivision: CGFloat = 2.0
+    if UIDevice.current.userInterfaceIdiom == .pad {
+      squareDivision = 4.0
+    }
+    let squareSize = CGFloat((size / squareDivision) - 2)
     layout.itemSize = CGSize(width: squareSize, height: squareSize)
     layout.minimumInteritemSpacing = 0
     layout.minimumLineSpacing = 4
+    layout.invalidateLayout()
+  }
+  
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    layout.invalidateLayout()
   }
   
   // MARK: - Actions
@@ -107,11 +124,19 @@ class RoutineViewController: UIViewController {
     routine.completionCount += 1
     RoutineList.shared.saveToCache()
     let alert = UIAlertController(title: "Congrats!", message: "You did it! Your training routine is complete!", preferredStyle: .alert)
-    let completeAction = UIAlertAction(title: "Hooray", style: .default) { (action) in
-      self.navigationController?.popViewController(animated: true)
-    }
+    let completeAction = UIAlertAction(title: "Hooray!", style: .default, handler: nil)
     alert.addAction(completeAction)
     self.present(alert, animated: true, completion: nil)
+  }
+  
+  private func calculateCompletion() {
+    let percentage = Double(routine.routineSetsCompleted.count) / Double(routine.routineSets.count)
+    if percentage == 1.0 {
+      displayCompletion()
+    }
+    progressView.updateProgressCircle(status: Float(percentage * 100))
+    let progress = String(Int(percentage * 100))
+    progressLabel.text = "\(progress)%"
   }
   
 }
@@ -126,7 +151,7 @@ extension RoutineViewController: UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SetCellId, for: indexPath) as! SetCell
     let routineSet = routine.routineSets[indexPath.row]
     cell.nameLabel.text = "\(routineSet.name) x\(routineSet.repetitions)"
-    if completedList.contains(indexPath.item) {
+    if routineSet.completed == true {
       cell.completedView.isHidden = false
     } else {
       cell.completedView.isHidden = true
@@ -138,17 +163,16 @@ extension RoutineViewController: UICollectionViewDataSource {
 extension RoutineViewController: UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if let index = completedList.index(of: indexPath.item), completedList.contains(index) {
-      completedList.remove(at: index)
-    } else {
-      completedList.append(indexPath.item)
-    }
-    let percentage = Double(completedList.count) / Double(routine.routineSets.count)
+    let routineSet = routine.routineSets[indexPath.row]
+    routineSet.completed = !routineSet.completed    
+    calculateCompletion()
+    let percentage = Double(routine.routineSetsCompleted.count) / Double(routine.routineSets.count)
     if percentage == 1.0 {
       displayCompletion()
     }
     progressView.updateProgressCircle(status: Float(percentage * 100))
-    progressLabel.text = "\(Float(percentage * 100))%"
+    let progress = String(Int(percentage * 100))
+    progressLabel.text = "\(progress)%"
     collectionView.reloadItems(at: [indexPath])
   }
   
