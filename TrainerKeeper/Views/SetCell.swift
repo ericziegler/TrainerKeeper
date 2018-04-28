@@ -23,6 +23,7 @@ class SetCell: UICollectionViewCell {
     super.awakeFromNib()
     self.layer.borderColor = UIColor(hex: 0xcccccc).cgColor
     self.layer.borderWidth = 1.0
+    self.layer.cornerRadius = 5.0
   }
   
 }
