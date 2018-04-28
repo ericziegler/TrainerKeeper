@@ -20,6 +20,7 @@ class RoutineViewController: UIViewController {
   @IBOutlet var progressView: CProgressView!
   @IBOutlet var progressLabel: RegularLabel!
   @IBOutlet var listView: UICollectionView!
+  @IBOutlet var totalRepLabel: LightLabel!
   
   var routine: Routine!
   var layout: UICollectionViewFlowLayout!
@@ -130,6 +131,7 @@ class RoutineViewController: UIViewController {
     routine.resetRoutine()
     progressView.updateProgressCircle(status: 0.0)
     progressLabel.text = "0%"
+    totalRepLabel.text = "Total Reps: \(routine.totalRepCount)"
     listView.reloadData()
   }
   

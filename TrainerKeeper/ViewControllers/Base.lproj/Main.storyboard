@@ -241,6 +241,12 @@
                                                     <color key="textColor" red="0.93333333333333335" green="0.45882352941176469" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eex-Hi-SZM" customClass="LightLabel" customModule="TrainerKeeper" customModuleProvider="target">
+                                                    <rect key="frame" x="323" y="30" width="37" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xk-ru-u3B" userLabel="Add Button">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                                     <connections>
@@ -250,17 +256,23 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="owe-w9-RuK" firstAttribute="leading" secondItem="nzU-py-KsC" secondAttribute="leading" constant="20" id="7pE-mj-Jtp"/>
+                                                <constraint firstItem="eex-Hi-SZM" firstAttribute="centerY" secondItem="OxI-A4-bKu" secondAttribute="centerY" id="CSW-aO-WxO"/>
                                                 <constraint firstItem="0xk-ru-u3B" firstAttribute="top" secondItem="nzU-py-KsC" secondAttribute="top" id="ESD-ff-9FR"/>
                                                 <constraint firstAttribute="trailing" secondItem="0xk-ru-u3B" secondAttribute="trailing" id="F5r-U5-tMR"/>
                                                 <constraint firstItem="owe-w9-RuK" firstAttribute="centerY" secondItem="nzU-py-KsC" secondAttribute="centerY" id="Hz8-8L-OTI"/>
                                                 <constraint firstItem="0xk-ru-u3B" firstAttribute="leading" secondItem="nzU-py-KsC" secondAttribute="leading" id="Kf7-LC-7Bc"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OxI-A4-bKu" secondAttribute="trailing" constant="20" symbolic="YES" id="UUR-cQ-XHT"/>
+                                                <constraint firstAttribute="trailing" secondItem="eex-Hi-SZM" secondAttribute="trailing" constant="15" id="VXn-PC-Zy6"/>
                                                 <constraint firstItem="OxI-A4-bKu" firstAttribute="leading" secondItem="owe-w9-RuK" secondAttribute="trailing" constant="12" id="Zge-Cw-Gy0"/>
                                                 <constraint firstAttribute="bottom" secondItem="OxI-A4-bKu" secondAttribute="bottom" constant="12" id="a9B-cC-SwZ"/>
                                                 <constraint firstItem="OxI-A4-bKu" firstAttribute="top" secondItem="nzU-py-KsC" secondAttribute="top" constant="12" id="cuu-v1-PKv"/>
                                                 <constraint firstAttribute="bottom" secondItem="0xk-ru-u3B" secondAttribute="bottom" id="dPA-gR-A2a"/>
+                                                <constraint firstItem="eex-Hi-SZM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nzU-py-KsC" secondAttribute="leading" constant="20" symbolic="YES" id="k1F-bH-CLc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="totalRepLabel" destination="eex-Hi-SZM" id="eCd-PH-bDt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -408,13 +420,21 @@
                                         <color key="textColor" red="0.090196078431372548" green="0.24705882352941178" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="474-iw-gyT" customClass="LightLabel" customModule="TrainerKeeper" customModuleProvider="target">
+                                        <rect key="frame" x="330" y="157" width="37" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="UXp-pZ-0c5" firstAttribute="top" secondItem="474-iw-gyT" secondAttribute="bottom" constant="6" id="28a-MC-Hkc"/>
                                     <constraint firstItem="AVe-Vo-r9G" firstAttribute="centerX" secondItem="SDw-un-YFj" secondAttribute="centerX" id="4zD-9x-mYl"/>
                                     <constraint firstAttribute="trailing" secondItem="UXp-pZ-0c5" secondAttribute="trailing" id="Bth-QL-B1o"/>
                                     <constraint firstItem="SDw-un-YFj" firstAttribute="leading" secondItem="gNa-sJ-PVT" secondAttribute="leading" constant="8" id="HfE-Ti-Krz"/>
                                     <constraint firstAttribute="height" constant="180" id="LEL-fY-cJV"/>
+                                    <constraint firstAttribute="trailing" secondItem="474-iw-gyT" secondAttribute="trailing" constant="8" id="Li5-yc-MQP"/>
                                     <constraint firstAttribute="trailing" secondItem="SDw-un-YFj" secondAttribute="trailing" constant="8" id="fmJ-bz-xQ8"/>
                                     <constraint firstItem="SDw-un-YFj" firstAttribute="top" secondItem="gNa-sJ-PVT" secondAttribute="top" constant="8" id="hUt-58-OP6"/>
                                     <constraint firstItem="AVe-Vo-r9G" firstAttribute="top" secondItem="SDw-un-YFj" secondAttribute="bottom" constant="49" id="jha-B1-lE5"/>
@@ -505,6 +525,7 @@
                         <outlet property="nameLabel" destination="SDw-un-YFj" id="T9C-LP-neV"/>
                         <outlet property="progressLabel" destination="AVe-Vo-r9G" id="2wq-Bu-G5g"/>
                         <outlet property="progressView" destination="PX7-1N-gBr" id="kwo-5t-Lmo"/>
+                        <outlet property="totalRepLabel" destination="474-iw-gyT" id="X6p-gC-f1p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z00-Xt-O0N" userLabel="First Responder" sceneMemberID="firstResponder"/>

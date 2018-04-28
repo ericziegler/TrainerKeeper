@@ -141,6 +141,7 @@ extension EditRoutineViewController: UITableViewDataSource, UITableViewDelegate 
     } else {
       let addCell: AddSetCell = tableView.dequeueReusableCell(withIdentifier: AddSetCellId, for: indexPath as IndexPath) as! AddSetCell
       addCell.delegate = self
+      addCell.totalRepLabel.text = "Total Reps: \(routine.totalRepCount)"
       return addCell
     }
   }

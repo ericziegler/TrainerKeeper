@@ -22,6 +22,8 @@ class AddSetCell: UITableViewCell {
   
   // MARK: - Properties
   
+  @IBOutlet var totalRepLabel: LightLabel!
+  
   var delegate: AddSetCellDelegate?
   
   @IBAction func addSetTapped(_ sender: AnyObject) {

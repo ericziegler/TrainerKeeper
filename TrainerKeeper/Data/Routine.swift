@@ -41,6 +41,16 @@ class Routine: NSObject, NSCoding {
     }
   }
   
+  var totalRepCount: Int {
+    get {
+      var count = 0
+      for curSet in routineSets {
+        count += curSet.repetitions
+      }
+      return count
+    }
+  }
+  
   // MARK: - Init
   
   override init() {
