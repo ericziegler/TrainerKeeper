@@ -34,6 +34,13 @@ class Routine: NSObject, NSCoding {
     }
   }
   
+  var percentageCompleted: Double {
+    get {
+      let percentage = Double(routineSetsCompleted.count) / Double(routineSets.count)
+      return percentage
+    }
+  }
+  
   // MARK: - Init
   
   override init() {
@@ -62,6 +69,13 @@ class Routine: NSObject, NSCoding {
     coder.encode(data, forKey: RoutineSetsCacheKey)
     coder.encode(NSNumber(integerLiteral: self.completionCount), forKey: RoutineCompletionCountCacheKey)
   }
-
+  
+  // MARK: - Convenience Methods
+  
+  func resetRoutine() {
+    for curSet in routineSets {
+      curSet.completed = false
+    }
+  }
   
 }

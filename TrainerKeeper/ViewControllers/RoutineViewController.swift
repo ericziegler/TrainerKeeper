@@ -42,7 +42,7 @@ class RoutineViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    listView.reloadData()
+    resetView()
   }
   
   private func setupNavBar() {
@@ -95,30 +95,49 @@ class RoutineViewController: UIViewController {
   // MARK: - Actions
   
   @IBAction func closeTapped(_ sender: AnyObject) {
-    let alert = UIAlertController(title: "Stop Routine?", message: "Closing will reset your current progress.", preferredStyle: .alert)
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    let editAction = UIAlertAction(title: "Stop", style: .default) { (action) in
+    if routine.percentageCompleted == 0.0 || routine.percentageCompleted == 1.0 {
       self.navigationController?.popViewController(animated: true)
+    } else {
+      let alert = UIAlertController(title: "Stop Routine?", message: "Closing will reset your current progress.", preferredStyle: .alert)
+      let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+      let editAction = UIAlertAction(title: "Stop", style: .default) { (action) in
+        self.navigationController?.popViewController(animated: true)
+      }
+      alert.addAction(cancelAction)
+      alert.addAction(editAction)
+      self.present(alert, animated: true, completion: nil)
     }
-    alert.addAction(cancelAction)
-    alert.addAction(editAction)
-    self.present(alert, animated: true, completion: nil)
   }
   
   @IBAction func editTapped(_ sender: AnyObject) {
-    let alert = UIAlertController(title: "Reset Routine?", message: "Editing will reset your current progress.", preferredStyle: .alert)
-    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-    let editAction = UIAlertAction(title: "Edit", style: .default) { (action) in
-      let controller = EditRoutineViewController.createControllerFor(routine: self.routine)
-      let navController = UINavigationController(rootViewController: controller)
-      self.present(navController, animated: true, completion: nil)
+    if routine.percentageCompleted == 0.0 || routine.percentageCompleted == 1.0 {
+      displayEditController()
+    } else {
+      let alert = UIAlertController(title: "Reset Routine?", message: "Editing will reset your current progress.", preferredStyle: .alert)
+      let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+      let editAction = UIAlertAction(title: "Edit", style: .default) { (action) in
+        self.displayEditController()
+      }
+      alert.addAction(cancelAction)
+      alert.addAction(editAction)
+      self.present(alert, animated: true, completion: nil)
     }
-    alert.addAction(cancelAction)
-    alert.addAction(editAction)
-    self.present(alert, animated: true, completion: nil)
   }
   
   // MARK: - Private Methods
+  
+  private func resetView() {
+    routine.resetRoutine()
+    progressView.updateProgressCircle(status: 0.0)
+    progressLabel.text = "0%"
+    listView.reloadData()
+  }
+  
+  private func displayEditController() {
+    let controller = EditRoutineViewController.createControllerFor(routine: self.routine)
+    let navController = UINavigationController(rootViewController: controller)
+    self.present(navController, animated: true, completion: nil)
+  }
   
   private func displayCompletion() {
     routine.completionCount += 1
@@ -130,12 +149,11 @@ class RoutineViewController: UIViewController {
   }
   
   private func calculateCompletion() {
-    let percentage = Double(routine.routineSetsCompleted.count) / Double(routine.routineSets.count)
-    if percentage == 1.0 {
+    if routine.percentageCompleted == 1.0 {
       displayCompletion()
     }
-    progressView.updateProgressCircle(status: Float(percentage * 100))
-    let progress = String(Int(percentage * 100))
+    progressView.updateProgressCircle(status: Float(routine.percentageCompleted * 100))
+    let progress = String(Int(routine.percentageCompleted * 100))
     progressLabel.text = "\(progress)%"
   }
   
@@ -166,13 +184,6 @@ extension RoutineViewController: UICollectionViewDelegate {
     let routineSet = routine.routineSets[indexPath.row]
     routineSet.completed = !routineSet.completed    
     calculateCompletion()
-    let percentage = Double(routine.routineSetsCompleted.count) / Double(routine.routineSets.count)
-    if percentage == 1.0 {
-      displayCompletion()
-    }
-    progressView.updateProgressCircle(status: Float(percentage * 100))
-    let progress = String(Int(percentage * 100))
-    progressLabel.text = "\(progress)%"
     collectionView.reloadItems(at: [indexPath])
   }
   
