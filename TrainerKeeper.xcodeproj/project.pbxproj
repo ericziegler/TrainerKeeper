@@ -8,19 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		0779F477208B512700FCD625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779F476208B512700FCD625 /* AppDelegate.swift */; };
-		0779F479208B512700FCD625 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779F478208B512700FCD625 /* ViewController.swift */; };
 		0779F47C208B512700FCD625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0779F47A208B512700FCD625 /* Main.storyboard */; };
 		0779F47E208B512900FCD625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0779F47D208B512900FCD625 /* Assets.xcassets */; };
 		0779F481208B512900FCD625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0779F47F208B512900FCD625 /* LaunchScreen.storyboard */; };
 		079201DF208FB3F100E70AEE /* RoutineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079201DE208FB3F100E70AEE /* RoutineList.swift */; };
 		07EEB46B209136E700106F3A /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB46A209136E700106F3A /* Routine.swift */; };
 		07EEB46D2091373000106F3A /* RoutineSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB46C2091373000106F3A /* RoutineSet.swift */; };
+		07EEB474209149E200106F3A /* StyleUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB46F209149E100106F3A /* StyleUI.swift */; };
+		07EEB475209149E200106F3A /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB470209149E100106F3A /* UIFont+Extensions.swift */; };
+		07EEB476209149E200106F3A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB471209149E100106F3A /* UIColor+Extensions.swift */; };
+		07EEB477209149E200106F3A /* NSRange+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB472209149E200106F3A /* NSRange+Extensions.swift */; };
+		07EEB478209149E200106F3A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB473209149E200106F3A /* UIImage+Extensions.swift */; };
+		07EEB47A2092456900106F3A /* RoutineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB4792092456900106F3A /* RoutineListViewController.swift */; };
+		07EEB47D2092491300106F3A /* RoutineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB47C2092491300106F3A /* RoutineListCell.swift */; };
+		07EEB47F2092A00400106F3A /* EditRoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB47E2092A00400106F3A /* EditRoutineViewController.swift */; };
+		07EEB4832092ADB700106F3A /* EditRoutineNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB4822092ADB700106F3A /* EditRoutineNameCell.swift */; };
+		07EEB4852092B33600106F3A /* AddSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB4842092B33600106F3A /* AddSetCell.swift */; };
+		07EEB4872092B5FE00106F3A /* EditSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB4862092B5FE00106F3A /* EditSetCell.swift */; };
+		07EEB4892093309100106F3A /* EditSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB4882093309100106F3A /* EditSetViewController.swift */; };
+		07EEB48B20939D8A00106F3A /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB48A20939D8A00106F3A /* RoutineViewController.swift */; };
+		07EEB48E2093A25E00106F3A /* CProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB48D2093A25E00106F3A /* CProgressView.swift */; };
+		07EEB4942093E7B800106F3A /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB4932093E7B800106F3A /* SetCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0779F473208B512700FCD625 /* TrainerKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainerKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0779F476208B512700FCD625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0779F478208B512700FCD625 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0779F47B208B512700FCD625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0779F47D208B512900FCD625 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0779F480208B512900FCD625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +41,21 @@
 		079201DE208FB3F100E70AEE /* RoutineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineList.swift; sourceTree = "<group>"; };
 		07EEB46A209136E700106F3A /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		07EEB46C2091373000106F3A /* RoutineSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineSet.swift; sourceTree = "<group>"; };
+		07EEB46F209149E100106F3A /* StyleUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleUI.swift; sourceTree = "<group>"; };
+		07EEB470209149E100106F3A /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		07EEB471209149E100106F3A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		07EEB472209149E200106F3A /* NSRange+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+Extensions.swift"; sourceTree = "<group>"; };
+		07EEB473209149E200106F3A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		07EEB4792092456900106F3A /* RoutineListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListViewController.swift; sourceTree = "<group>"; };
+		07EEB47C2092491300106F3A /* RoutineListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListCell.swift; sourceTree = "<group>"; };
+		07EEB47E2092A00400106F3A /* EditRoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineViewController.swift; sourceTree = "<group>"; };
+		07EEB4822092ADB700106F3A /* EditRoutineNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRoutineNameCell.swift; sourceTree = "<group>"; };
+		07EEB4842092B33600106F3A /* AddSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetCell.swift; sourceTree = "<group>"; };
+		07EEB4862092B5FE00106F3A /* EditSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSetCell.swift; sourceTree = "<group>"; };
+		07EEB4882093309100106F3A /* EditSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSetViewController.swift; sourceTree = "<group>"; };
+		07EEB48A20939D8A00106F3A /* RoutineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
+		07EEB48D2093A25E00106F3A /* CProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CProgressView.swift; sourceTree = "<group>"; };
+		07EEB4932093E7B800106F3A /* SetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +91,10 @@
 			children = (
 				079201DB208FB3B600E70AEE /* AppDelegate */,
 				079201DC208FB3CA00E70AEE /* ViewControllers */,
+				07EEB47B2092490200106F3A /* Views */,
 				079201DD208FB3E300E70AEE /* Data */,
+				07EEB46E209149B800106F3A /* Extensions */,
+				07EEB48C2093A24F00106F3A /* ThirdParty */,
 			);
 			path = TrainerKeeper;
 			sourceTree = "<group>";
@@ -79,8 +110,11 @@
 		079201DC208FB3CA00E70AEE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0779F478208B512700FCD625 /* ViewController.swift */,
 				0779F47A208B512700FCD625 /* Main.storyboard */,
+				07EEB4792092456900106F3A /* RoutineListViewController.swift */,
+				07EEB47E2092A00400106F3A /* EditRoutineViewController.swift */,
+				07EEB4882093309100106F3A /* EditSetViewController.swift */,
+				07EEB48A20939D8A00106F3A /* RoutineViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -93,6 +127,38 @@
 				07EEB46C2091373000106F3A /* RoutineSet.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		07EEB46E209149B800106F3A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07EEB46F209149E100106F3A /* StyleUI.swift */,
+				07EEB472209149E200106F3A /* NSRange+Extensions.swift */,
+				07EEB471209149E100106F3A /* UIColor+Extensions.swift */,
+				07EEB470209149E100106F3A /* UIFont+Extensions.swift */,
+				07EEB473209149E200106F3A /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		07EEB47B2092490200106F3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				07EEB47C2092491300106F3A /* RoutineListCell.swift */,
+				07EEB4822092ADB700106F3A /* EditRoutineNameCell.swift */,
+				07EEB4842092B33600106F3A /* AddSetCell.swift */,
+				07EEB4862092B5FE00106F3A /* EditSetCell.swift */,
+				07EEB4932093E7B800106F3A /* SetCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		07EEB48C2093A24F00106F3A /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				07EEB48D2093A25E00106F3A /* CProgressView.swift */,
+			);
+			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		07FA589C208E6D6900D35CE7 /* Resources */ = {
@@ -177,11 +243,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0779F479208B512700FCD625 /* ViewController.swift in Sources */,
+				07EEB475209149E200106F3A /* UIFont+Extensions.swift in Sources */,
+				07EEB47F2092A00400106F3A /* EditRoutineViewController.swift in Sources */,
+				07EEB477209149E200106F3A /* NSRange+Extensions.swift in Sources */,
+				07EEB476209149E200106F3A /* UIColor+Extensions.swift in Sources */,
+				07EEB474209149E200106F3A /* StyleUI.swift in Sources */,
+				07EEB48E2093A25E00106F3A /* CProgressView.swift in Sources */,
+				07EEB478209149E200106F3A /* UIImage+Extensions.swift in Sources */,
+				07EEB48B20939D8A00106F3A /* RoutineViewController.swift in Sources */,
+				07EEB4832092ADB700106F3A /* EditRoutineNameCell.swift in Sources */,
 				0779F477208B512700FCD625 /* AppDelegate.swift in Sources */,
 				07EEB46B209136E700106F3A /* Routine.swift in Sources */,
+				07EEB47A2092456900106F3A /* RoutineListViewController.swift in Sources */,
 				079201DF208FB3F100E70AEE /* RoutineList.swift in Sources */,
+				07EEB47D2092491300106F3A /* RoutineListCell.swift in Sources */,
 				07EEB46D2091373000106F3A /* RoutineSet.swift in Sources */,
+				07EEB4872092B5FE00106F3A /* EditSetCell.swift in Sources */,
+				07EEB4852092B33600106F3A /* AddSetCell.swift in Sources */,
+				07EEB4892093309100106F3A /* EditSetViewController.swift in Sources */,
+				07EEB4942093E7B800106F3A /* SetCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
