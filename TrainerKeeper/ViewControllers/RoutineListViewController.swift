@@ -93,9 +93,31 @@ extension RoutineListViewController: UITableViewDataSource, UITableViewDelegate 
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let routine = RoutineList.shared.list[indexPath.row]
+    let alert = UIAlertController(title: "Is This a Group Activity?", message: "Is it just you, or are you doing this routine with others?", preferredStyle: .alert)
+    let soloAction = UIAlertAction(title: "I'm flying solo", style: .default) { (action) in
+      let routine = RoutineList.shared.list[indexPath.row]
+      let controller = RoutineViewController.createControllerFor(routine: routine)
+      self.navigationController?.pushViewController(controller, animated: true)
+    }
+    let groupAction = UIAlertAction(title: "Group Activity", style: .default) { (action) in
+      let routine = RoutineList.shared.list[indexPath.row]
+      let controller = ParticipantsViewController.createControllerFor(routine: routine)
+      controller.delegate =  self
+      let navController = UINavigationController(rootViewController: controller)
+      self.present(navController, animated: true, completion: nil)
+    }
+    alert.addAction(soloAction)
+    alert.addAction(groupAction)
+    self.present(alert, animated: true, completion: nil)
+  }
+  
+}
+
+extension RoutineListViewController: ParticipantsViewControllerDelegate {
+
+  func didAddParticipantsFor(participantsViewController: ParticipantsViewController, routine: Routine) {
     let controller = RoutineViewController.createControllerFor(routine: routine)
-    navigationController?.pushViewController(controller, animated: true)
+    self.navigationController?.pushViewController(controller, animated: true)
   }
   
 }

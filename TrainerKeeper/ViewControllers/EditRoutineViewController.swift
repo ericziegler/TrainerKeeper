@@ -99,10 +99,12 @@ class EditRoutineViewController: UIViewController {
       RoutineList.shared.saveToCache()
     } else {
       let alert = UIAlertController(title: "Cannot Save", message: "A routine must have a name and at least one set.", preferredStyle: .alert)
-      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        self.dismiss(animated: true, completion: nil)
+      }
+      alert.addAction(okAction)
       self.present(alert, animated: true, completion: nil)
     }
-    self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func closeTapped(_ sender: AnyObject) {

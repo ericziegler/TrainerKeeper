@@ -21,6 +21,7 @@ class Routine: NSObject, NSCoding {
   var name = ""
   var routineSets = [RoutineSet]()
   var completionCount = 0
+  var participants = [String]()
   
   var routineSetsCompleted: [RoutineSet] {
     get {

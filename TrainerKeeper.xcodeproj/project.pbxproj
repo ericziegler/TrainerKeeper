@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074A8D8E20C95A7E006B35C9 /* AddParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074A8D8D20C95A7E006B35C9 /* AddParticipantCell.swift */; };
+		074A8D9020C95B25006B35C9 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074A8D8F20C95B25006B35C9 /* ParticipantCell.swift */; };
+		074A8D9220C95BB4006B35C9 /* ParticipantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074A8D9120C95BB4006B35C9 /* ParticipantsViewController.swift */; };
 		0779F477208B512700FCD625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779F476208B512700FCD625 /* AppDelegate.swift */; };
 		0779F47C208B512700FCD625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0779F47A208B512700FCD625 /* Main.storyboard */; };
 		0779F47E208B512900FCD625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0779F47D208B512900FCD625 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074A8D8D20C95A7E006B35C9 /* AddParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParticipantCell.swift; sourceTree = "<group>"; };
+		074A8D8F20C95B25006B35C9 /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
+		074A8D9120C95BB4006B35C9 /* ParticipantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsViewController.swift; sourceTree = "<group>"; };
 		0779F473208B512700FCD625 /* TrainerKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainerKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0779F476208B512700FCD625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0779F47B208B512700FCD625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 				07EEB47E2092A00400106F3A /* EditRoutineViewController.swift */,
 				07EEB4882093309100106F3A /* EditSetViewController.swift */,
 				07EEB48A20939D8A00106F3A /* RoutineViewController.swift */,
+				074A8D9120C95BB4006B35C9 /* ParticipantsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +159,8 @@
 				07EEB4842092B33600106F3A /* AddSetCell.swift */,
 				07EEB4862092B5FE00106F3A /* EditSetCell.swift */,
 				07EEB4932093E7B800106F3A /* SetCell.swift */,
+				074A8D8D20C95A7E006B35C9 /* AddParticipantCell.swift */,
+				074A8D8F20C95B25006B35C9 /* ParticipantCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,13 +266,16 @@
 				07EEB48B20939D8A00106F3A /* RoutineViewController.swift in Sources */,
 				07EEB4832092ADB700106F3A /* EditRoutineNameCell.swift in Sources */,
 				0779F477208B512700FCD625 /* AppDelegate.swift in Sources */,
+				074A8D9020C95B25006B35C9 /* ParticipantCell.swift in Sources */,
 				07EEB46B209136E700106F3A /* Routine.swift in Sources */,
+				074A8D8E20C95A7E006B35C9 /* AddParticipantCell.swift in Sources */,
 				07EEB47A2092456900106F3A /* RoutineListViewController.swift in Sources */,
 				079201DF208FB3F100E70AEE /* RoutineList.swift in Sources */,
 				07EEB47D2092491300106F3A /* RoutineListCell.swift in Sources */,
 				07EEB46D2091373000106F3A /* RoutineSet.swift in Sources */,
 				07EEB4872092B5FE00106F3A /* EditSetCell.swift in Sources */,
 				07EEB4852092B33600106F3A /* AddSetCell.swift in Sources */,
+				074A8D9220C95BB4006B35C9 /* ParticipantsViewController.swift in Sources */,
 				07EEB4892093309100106F3A /* EditSetViewController.swift in Sources */,
 				07EEB4942093E7B800106F3A /* SetCell.swift in Sources */,
 			);
