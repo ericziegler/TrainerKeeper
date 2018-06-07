@@ -27,8 +27,14 @@ class Routine: NSObject, NSCoding {
     get {
       var completed = [RoutineSet]()
       for curSet in routineSets {
-        if curSet.completed {
-          completed.append(curSet)
+        if participants.count == 0 {
+          if curSet.completed == true {
+            completed.append(curSet)
+          }
+        } else {
+          if curSet.participantsCompleted.count == participants.count {
+            completed.append(curSet)
+          }
         }
       }
       return completed
@@ -40,6 +46,11 @@ class Routine: NSObject, NSCoding {
       let percentage = Double(routineSetsCompleted.count) / Double(routineSets.count)
       return percentage
     }
+  }
+  
+  func percentageCompletedFor(routineSet: RoutineSet) -> Double {
+    let percentage = Double(routineSet.participantsCompleted.count) / Double (participants.count)
+    return percentage
   }
   
   var totalRepCount: Int {

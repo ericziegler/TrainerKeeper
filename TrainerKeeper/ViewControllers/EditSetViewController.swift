@@ -85,6 +85,21 @@ class EditSetViewController: UIViewController {
   }
   
   @IBAction func saveTapped(_ sender: AnyObject) {
+    saveSet()
+  }
+  
+  @IBAction func closeTapped(_ sender: AnyObject) {
+    navigationController?.popViewController(animated: true)
+  }
+  
+  @IBAction func deleteTapped(_ sender: AnyObject) {
+    if let index = routine.routineSets.index(of: routineSet) {
+      routine.routineSets.remove(at: index)
+    }
+    navigationController?.popViewController(animated: true)
+  }
+  
+  private func saveSet() {
     if let name = nameTextField.text, let repText = repTextField.text, let reps = Int(repText) {
       routineSet.name = name
       routineSet.repetitions = reps
@@ -104,17 +119,6 @@ class EditSetViewController: UIViewController {
     }
   }
   
-  @IBAction func closeTapped(_ sender: AnyObject) {
-    navigationController?.popViewController(animated: true)
-  }
-  
-  @IBAction func deleteTapped(_ sender: AnyObject) {
-    if let index = routine.routineSets.index(of: routineSet) {
-      routine.routineSets.remove(at: index)
-    }
-    navigationController?.popViewController(animated: true)
-  }
-  
 }
 
 extension EditSetViewController: UITextFieldDelegate {
@@ -122,6 +126,9 @@ extension EditSetViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if textField == nameTextField {
       repTextField.becomeFirstResponder()
+    }
+    else if textField == repTextField {
+      saveSet()
     }
     return true
   }

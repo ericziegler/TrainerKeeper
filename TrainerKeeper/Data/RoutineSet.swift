@@ -20,6 +20,7 @@ class RoutineSet: NSObject, NSCoding {
   var name = ""
   var repetitions = 0
   var completed = false
+  var participantsCompleted = [String]()
   
   // MARK: Init
   

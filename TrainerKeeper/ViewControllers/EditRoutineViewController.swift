@@ -97,6 +97,7 @@ class EditRoutineViewController: UIViewController {
         RoutineList.shared.list.append(routine)
       }
       RoutineList.shared.saveToCache()
+      self.dismiss(animated: true, completion: nil)
     } else {
       let alert = UIAlertController(title: "Cannot Save", message: "A routine must have a name and at least one set.", preferredStyle: .alert)
       let okAction = UIAlertAction(title: "OK", style: .default) { (action) in

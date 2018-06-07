@@ -15,6 +15,8 @@
 		0779F47E208B512900FCD625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0779F47D208B512900FCD625 /* Assets.xcassets */; };
 		0779F481208B512900FCD625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0779F47F208B512900FCD625 /* LaunchScreen.storyboard */; };
 		079201DF208FB3F100E70AEE /* RoutineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079201DE208FB3F100E70AEE /* RoutineList.swift */; };
+		07D79CCB20C974BB005EA686 /* RoutineParticipantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D79CCA20C974BB005EA686 /* RoutineParticipantsViewController.swift */; };
+		07D79CCD20C975A6005EA686 /* RoutineParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D79CCC20C975A6005EA686 /* RoutineParticipantCell.swift */; };
 		07EEB46B209136E700106F3A /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB46A209136E700106F3A /* Routine.swift */; };
 		07EEB46D2091373000106F3A /* RoutineSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB46C2091373000106F3A /* RoutineSet.swift */; };
 		07EEB474209149E200106F3A /* StyleUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EEB46F209149E100106F3A /* StyleUI.swift */; };
@@ -46,6 +48,8 @@
 		0779F480208B512900FCD625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0779F482208B512900FCD625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		079201DE208FB3F100E70AEE /* RoutineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineList.swift; sourceTree = "<group>"; };
+		07D79CCA20C974BB005EA686 /* RoutineParticipantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineParticipantsViewController.swift; sourceTree = "<group>"; };
+		07D79CCC20C975A6005EA686 /* RoutineParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineParticipantCell.swift; sourceTree = "<group>"; };
 		07EEB46A209136E700106F3A /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		07EEB46C2091373000106F3A /* RoutineSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineSet.swift; sourceTree = "<group>"; };
 		07EEB46F209149E100106F3A /* StyleUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleUI.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				07EEB4882093309100106F3A /* EditSetViewController.swift */,
 				07EEB48A20939D8A00106F3A /* RoutineViewController.swift */,
 				074A8D9120C95BB4006B35C9 /* ParticipantsViewController.swift */,
+				07D79CCA20C974BB005EA686 /* RoutineParticipantsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				07EEB4932093E7B800106F3A /* SetCell.swift */,
 				074A8D8D20C95A7E006B35C9 /* AddParticipantCell.swift */,
 				074A8D8F20C95B25006B35C9 /* ParticipantCell.swift */,
+				07D79CCC20C975A6005EA686 /* RoutineParticipantCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				07EEB48E2093A25E00106F3A /* CProgressView.swift in Sources */,
 				07EEB478209149E200106F3A /* UIImage+Extensions.swift in Sources */,
 				07EEB48B20939D8A00106F3A /* RoutineViewController.swift in Sources */,
+				07D79CCB20C974BB005EA686 /* RoutineParticipantsViewController.swift in Sources */,
 				07EEB4832092ADB700106F3A /* EditRoutineNameCell.swift in Sources */,
 				0779F477208B512700FCD625 /* AppDelegate.swift in Sources */,
 				074A8D9020C95B25006B35C9 /* ParticipantCell.swift in Sources */,
@@ -274,6 +281,7 @@
 				07EEB47D2092491300106F3A /* RoutineListCell.swift in Sources */,
 				07EEB46D2091373000106F3A /* RoutineSet.swift in Sources */,
 				07EEB4872092B5FE00106F3A /* EditSetCell.swift in Sources */,
+				07D79CCD20C975A6005EA686 /* RoutineParticipantCell.swift in Sources */,
 				07EEB4852092B33600106F3A /* AddSetCell.swift in Sources */,
 				074A8D9220C95BB4006B35C9 /* ParticipantsViewController.swift in Sources */,
 				07EEB4892093309100106F3A /* EditSetViewController.swift in Sources */,

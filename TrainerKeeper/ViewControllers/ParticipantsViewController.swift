@@ -114,6 +114,7 @@ class ParticipantsViewController: UIViewController {
       textField.text = name
       textField.delegate = self
       textField.returnKeyType = .done
+      textField.autocapitalizationType = .words
     }
     self.present(alert, animated: true, completion: nil)
   }

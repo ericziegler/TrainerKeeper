@@ -18,6 +18,7 @@ class SetCell: UICollectionViewCell {
   
   @IBOutlet var nameLabel: RegularLabel!
   @IBOutlet var completedView: UIView!
+  @IBOutlet var progressView: CProgressView!
   
   override func awakeFromNib() {
     super.awakeFromNib()

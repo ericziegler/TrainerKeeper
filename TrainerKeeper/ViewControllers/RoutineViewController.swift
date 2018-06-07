@@ -24,6 +24,7 @@ class RoutineViewController: UIViewController {
   
   var routine: Routine!
   var layout: UICollectionViewFlowLayout!
+  var participantViewController: RoutineParticipantsViewController?
   
   // MARK: - Init
   
@@ -150,6 +151,30 @@ class RoutineViewController: UIViewController {
     progressLabel.text = "\(progress)%"
   }
   
+  private func showParticipantView(routineSet: RoutineSet) {
+    participantViewController = RoutineParticipantsViewController.createControllerFor(routine: routine, routineSet: routineSet)
+    if let participantVC = participantViewController {
+      participantVC.delegate = self
+      participantVC.view.alpha = 0.0
+      participantVC.addToParent(parentViewController: self, container: self.view)
+      UIView.animate(withDuration: 0.2) {
+        participantVC.view.alpha = 1.0
+      }
+    }
+  }
+  
+  private func hideParticipantView() {
+    if let participantVC = participantViewController {
+      UIView.animate(withDuration: 0.2, animations: {
+        participantVC.view.alpha = 0.0
+      }) { (completed) in
+        self.participantViewController = nil
+        self.calculateCompletion()
+        self.listView.reloadData()
+      }
+    }
+  }
+  
 }
 
 extension RoutineViewController: UICollectionViewDataSource {
@@ -162,10 +187,24 @@ extension RoutineViewController: UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SetCellId, for: indexPath) as! SetCell
     let routineSet = routine.routineSets[indexPath.row]
     cell.nameLabel.text = "\(routineSet.name) x\(routineSet.repetitions)"
-    if routineSet.completed == true {
-      cell.completedView.isHidden = false
+    if routine.participants.count == 0 {
+      cell.progressView.isHidden = true
+      if routineSet.completed == true {
+        cell.completedView.isHidden = false
+      } else {
+        cell.completedView.isHidden = true
+      }
     } else {
+      cell.progressView.isHidden = true
       cell.completedView.isHidden = true
+      if routineSet.participantsCompleted.count > 0 {
+        cell.progressView.isHidden = false
+        cell.progressView.updateProgressCircle(status: Float(routine.percentageCompletedFor(routineSet: routineSet) * 100))
+      }
+      if routineSet.participantsCompleted.count == routine.participants.count {
+        cell.completedView.isHidden = false
+        cell.progressView.isHidden = true
+      }
     }
     return cell
   }
@@ -176,9 +215,28 @@ extension RoutineViewController: UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let routineSet = routine.routineSets[indexPath.row]
-    routineSet.completed = !routineSet.completed    
-    calculateCompletion()
-    collectionView.reloadItems(at: [indexPath])
+    if routine.participants.count == 0 {
+      routineSet.completed = !routineSet.completed
+      calculateCompletion()
+      collectionView.reloadItems(at: [indexPath])
+    } else {
+      showParticipantView(routineSet: routineSet)
+    }
+  }
+  
+}
+
+extension RoutineViewController: RoutineParticipantsViewControllerDelegate {
+
+  func participantToggleSetFor(routineParticipantsViewController: RoutineParticipantsViewController, routineSet: RoutineSet, participant: String?) {
+    if let participant = participant {
+      if routineSet.participantsCompleted.contains(participant) {
+        routineSet.participantsCompleted.remove(at: routineSet.participantsCompleted.index(of: participant)!)
+      } else {
+        routineSet.participantsCompleted.append(participant)
+      }
+    }
+    hideParticipantView()
   }
   
 }
