@@ -431,6 +431,7 @@
                                 <constraints>
                                     <constraint firstItem="UXp-pZ-0c5" firstAttribute="top" secondItem="474-iw-gyT" secondAttribute="bottom" constant="6" id="28a-MC-Hkc"/>
                                     <constraint firstItem="AVe-Vo-r9G" firstAttribute="centerX" secondItem="SDw-un-YFj" secondAttribute="centerX" id="4zD-9x-mYl"/>
+                                    <constraint firstItem="474-iw-gyT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gNa-sJ-PVT" secondAttribute="leading" constant="20" symbolic="YES" id="Bkd-dg-7Bz"/>
                                     <constraint firstAttribute="trailing" secondItem="UXp-pZ-0c5" secondAttribute="trailing" id="Bth-QL-B1o"/>
                                     <constraint firstItem="SDw-un-YFj" firstAttribute="leading" secondItem="gNa-sJ-PVT" secondAttribute="leading" constant="8" id="HfE-Ti-Krz"/>
                                     <constraint firstAttribute="height" constant="180" id="LEL-fY-cJV"/>
@@ -461,7 +462,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jab" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="daL-vy-QBB" customClass="RegularLabel" customModule="TrainerKeeper" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Jab" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="daL-vy-QBB" customClass="RegularLabel" customModule="TrainerKeeper" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="0.0" width="128" height="150"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                     <color key="textColor" red="0.090196078431372548" green="0.24705882352941178" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -530,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z00-Xt-O0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3480.8000000000002" y="136.28185907046478"/>
+            <point key="canvasLocation" x="3460" y="134"/>
         </scene>
     </scenes>
     <resources>

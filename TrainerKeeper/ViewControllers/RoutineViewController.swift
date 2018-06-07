@@ -64,30 +64,21 @@ class RoutineViewController: UIViewController {
   }
   
   // MARK: - Layout
-  
+
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     // Update flow layout
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-    var size = listView.bounds.size.width
     layout.minimumInteritemSpacing = 0
-    layout.minimumLineSpacing = 4
+    layout.minimumLineSpacing = 0
+    var size = self.view.frame.size.width / 3.0
     if UIDevice.current.orientation.isLandscape {
-      size = listView.bounds.height
-      layout.minimumInteritemSpacing = 4
-      layout.minimumLineSpacing = 0
+      size = self.view.frame.size.width / 4.0
     }
-    var squareDivision: CGFloat = 2.0
-    if UIDevice.current.userInterfaceIdiom == .pad {
-      squareDivision = 4.0
-    }
-    let squareSize = CGFloat((size / squareDivision) - 2)
-    layout.itemSize = CGSize(width: squareSize, height: squareSize)
-    layout.minimumInteritemSpacing = 0
-    layout.minimumLineSpacing = 4
+    layout.itemSize = CGSize(width: size, height: size)
     layout.invalidateLayout()
   }
-  
+
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
     layout.invalidateLayout()
@@ -178,6 +169,7 @@ extension RoutineViewController: UICollectionViewDataSource {
     }
     return cell
   }
+  
 }
 
 extension RoutineViewController: UICollectionViewDelegate {

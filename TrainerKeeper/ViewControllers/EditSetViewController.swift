@@ -58,6 +58,7 @@ class EditSetViewController: UIViewController {
     } else {
       deleteButon.layer.cornerRadius = 10.0
     }
+    nameTextField.becomeFirstResponder()
   }
   
   private func setupNavBar() {

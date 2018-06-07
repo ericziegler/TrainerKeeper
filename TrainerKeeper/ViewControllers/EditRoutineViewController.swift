@@ -44,8 +44,16 @@ class EditRoutineViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     editTable.reloadData()
+    editTable.alpha = 0.0
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    editTable.scrollToRow(at: IndexPath(row: 0, section: 2), at: .bottom, animated: false)
+    UIView.animate(withDuration: 0.1) {
+      self.editTable.alpha = 1.0
+    }
+  }
   
   private func setupNavBar() {
     navigationController?.navigationBar.titleTextAttributes = navTitleTextAttributes()
